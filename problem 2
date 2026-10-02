@@ -1,0 +1,48 @@
+/******************************************************************************
+
+ Scholarship Grade Summary [Medium]
+ 
+ Quiz=88.5; Lab=92; Project=90; Exam=86;
+ 
+ I
+ 
+
+*******************************************************************************/
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double quiz, laboratory, project, examination;
+
+    cout << "Enter quiz score: ";
+    cin >> quiz;
+
+    cout << "Enter laboratory score: ";
+    cin >> laboratory;
+
+    cout << "Enter project score: ";
+    cin >> project;
+
+    cout << "Enter examination score: ";
+    cin >> examination;
+
+    double weightedGrade =
+        (quiz * 0.20) +
+        (laboratory * 0.25) +
+        (project * 0.25) +
+        (examination * 0.30);
+
+    int roundedGrade = static_cast<int>(round(weightedGrade));
+    int truncatedGrade = static_cast<int>(weightedGrade);
+
+    cout << fixed << setprecision(2);
+
+    cout << "\nWeighted grade = " << weightedGrade << endl;
+    cout << "Rounded grade = " << roundedGrade << endl;
+    cout << "Cast to int = " << truncatedGrade << endl;
+
+    return 0;
+}
