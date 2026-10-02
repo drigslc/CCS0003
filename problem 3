@@ -1,0 +1,51 @@
+/******************************************************************************
+
+
+*******************************************************************************/
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+   double base_fare, distance, rate, toll_fee, booking_percent, num_passengers;
+   
+    cout << "\nEnter the Base Fare: ";
+    cin >> base_fare;
+    cout << "\nYour base fare is: "<<base_fare;
+
+    cout << "\nEnter Distance (in kilometers): ";
+    cin >> distance;
+    cout << "\nThe Distance is:  "<<distance;
+
+    cout << "\nEnter Rate: ";
+    cin >> rate;
+    cout << "\nThe Rate is:  "<<rate;
+    
+    cout << "\nEnter Toll Fee: ";
+    cin >> toll_fee;
+    cout << "\nThe toll fee is: "<<toll_fee;
+    
+    cout << "\nEnter Booking_fee of Percentage: ";
+    cin >> booking_percent;
+    cout << "\nThe Booking fee:  "<<booking_percent;
+    
+    cout << "\nEnter number of Passengers: ";
+    cin >> num_passengers;
+    cout << "\nThe number of passengers:  "<<num_passengers;
+
+    double distance_charge = distance * rate;
+    double pre_total = base_fare + distance_charge + toll_fee;
+    double booking_fee = pre_total * (booking_percent / 100);
+    double total = pre_total + booking_fee;
+    double rate_split = total / num_passengers;
+
+    cout << fixed << setprecision(2);
+
+    cout << "Distance Charge" << distance_charge << endl;
+    cout << "Pre-fee: " << pre_total << endl;
+    cout << "Booking fee: " << booking_percent << endl;
+    cout << "Final Total: " << total << endl;
+    cout << "Fare split (per passenger): " << rate_split << endl;
+
+    return 0;
+}
