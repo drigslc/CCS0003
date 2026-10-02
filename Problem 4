@@ -1,0 +1,46 @@
+/******************************************************************************
+
+
+
+*******************************************************************************/
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double w_width, w_height, num_coats, coverage;
+
+    cout << "\nEnter the width: ";
+    cin >> w_width;
+    cout << "\nThe Base Width is: "<<w_width;
+
+    cout << "\nEnter Height: ";
+    cin >> w_height;
+    cout << "\nThe Height is:  "<<w_height;
+
+    cout << "\nEnter Coats: ";
+    cin >> num_coats;
+    cout << "\nThe Coats is:  "<<num_coats;
+    
+    cout << "\nEnter the Coverage per Can: ";
+    cin >> coverage;
+    cout << "\nThe coverage per Can : "<<coverage;
+    
+
+    double wallArea = w_width * w_height;
+    double totalPaintArea = wallArea * num_coats;
+    double exactCans = totalPaintArea / coverage;
+
+    int cansToBuy = static_cast<int>(ceil(exactCans));
+
+    cout << fixed << setprecision(2);
+
+    cout << "Wall area = " << wallArea << endl;
+    cout << "Total paint area = " << totalPaintArea << endl;
+    cout << "Exact cans = " << exactCans << endl;
+    cout << "Cans to buy = " << cansToBuy << endl;
+
+    return 0;
+}
