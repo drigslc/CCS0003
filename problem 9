@@ -1,0 +1,41 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    double baseTuition;
+    double feePercentage;
+    double downPayment;
+    int months;
+
+    cout << "Enter base tuition: ";
+    cin >> baseTuition;
+    cout << "\nThe base tuition is:"<<baseTuition;
+
+    cout << "Enter processing-fee percentage: ";
+    cin >> feePercentage;
+    cout << "\nThe processing fee is:"<<feePercentage;
+
+    cout << "Enter down payment: ";
+    cin >> downPayment;
+    cout << "\nThe down payment is:"<<downPayment;
+
+    cout << "Enter number of monthly installments: ";
+    cin >> months;
+    cout << "\nThe monthly installment will be:"<<months;
+
+    double processingFee = baseTuition * (feePercentage / 100.0);
+    double adjustedTuition = baseTuition + processingFee;
+    double balance = adjustedTuition - downPayment;
+    double monthlyPayment = balance / months;
+
+    cout << fixed << setprecision(2);
+
+    cout << "\nProcessing fee = " << processingFee << endl;
+    cout << "Adjusted tuition = " << adjustedTuition << endl;
+    cout << "Balance = " << balance << endl;
+    cout << "Monthly = " << monthlyPayment << endl;
+
+    return 0;
+}
