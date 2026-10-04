@@ -1,0 +1,42 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double t1, t2, t3;
+
+    cout << "Enter temperature 1: ";
+    cin >> t1;
+    cout << "\nThe temperature is:"<<t1;
+
+    cout << "Enter temperature 2: ";
+    cin >> t2;
+    cout << "\nThe temperature is:"<<t2;
+
+    cout << "Enter temperature 3: ";
+    cin >> t3;
+    cout << "\nThe temperature is:"<<t2;
+
+    double average = (t1 + t2 + t3) / 3.0;
+    double difference = fabs(t1 - t3);
+
+    double floorValue = floor(average);
+    double ceilValue = ceil(average);
+    double truncValue = trunc(average);
+    double roundValue = round(average);
+
+    cout << fixed << setprecision(3);
+
+    cout << "\nAverage = " << average
+         << "; |T1-T3| = " << difference;
+
+    cout << setprecision(0);
+    cout << "; floor = " << floorValue
+         << "; ceil = " << ceilValue
+         << "; trunc = " << truncValue
+         << "; round = " << roundValue << endl;
+
+    return 0;
+}
