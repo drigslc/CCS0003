@@ -1,0 +1,35 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    
+    int num_attendees, seats_per_table;
+    
+     cout << "\nEnter number of attendees: ";
+    cin >> num_attendees;
+    cout << "\nAttendees: "<<num_attendees;
+
+    cout << "\nEnter seats per table: ";
+    cin >> seats_per_table;
+    cout << "\nThe number of sats:  "<<seats_per_table;
+
+   
+    double exactTables =
+        static_cast<double>(num_attendees) / seats_per_table;
+
+    int tablesRequired = static_cast<int>(ceil(exactTables));
+    int totalSeats = tablesRequired * seats_per_table;
+    int unusedSeats = totalSeats - num_attendees;
+
+    cout << fixed << setprecision(2);
+
+    cout << "Exact tables = " << exactTables << endl;
+    cout << "Tables required = " << tablesRequired << endl;
+    cout << "Total seats = " << totalSeats << endl;
+    cout << "Unused seats = " << unusedSeats << endl;
+
+    return 0;
+}
